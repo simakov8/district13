@@ -1,0 +1,66 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default Config",
+      "description": "Default build using Visual Studio generator",
+      "generator": "Visual Studio 16",
+      "binaryDir": "${sourceDir}/.build/${presetName}",
+      "cacheVariables": {
+        "Qt6_DIR":"C:/Qt/6.3.2/msvc2019_64/lib/cmake/Qt6",
+        "QT_ADDITIONAL_PACKAGES_PREFIX_PATH":"C:/Qt/6.3.2/msvc2019_64"
+      }
+    },
+    {
+      "name": "release",
+      "inherits": "default",
+      "displayName": "Visual Studio Release",
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES":"Release"
+      }
+    },
+    {
+      "name": "debug",
+      "inherits": "default",
+      "displayName": "Visual Studio Debug",
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES":"Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "release",
+      "displayName": "Visual Studio Release",
+      "configurePreset": "release",
+      "configuration": "Release"
+    },
+    {
+      "name": "debug",
+      "displayName": "Visual Studio Debug",
+      "configurePreset": "debug",
+      "configuration": "Debug"
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "release",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release"
+        },
+        {
+          "type": "build",
+          "name": "release"
+        }
+      ]
+    }
+  ]
+}

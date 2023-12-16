@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/res/icons">
+        <file>house.png</file>
+        <file>empty.png</file>
+        <file>school.png</file>
+        <file>shop.png</file>
+        <file>park.png</file>
+        <file>time.png</file>
+        <file>sad_face.png</file>
+        <file>factory.png</file>
+        <file>repair.png</file>
+        <file>crane.png</file>
+        <file>broom.png</file>
+        <file>money.png</file>
+    </qresource>
+</RCC>
